@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Button.module.css'
-function Button() {
+function Button({button}) {
   return (
-    <button className={styles.button}>Give FeedBack</button>
+    <button className={styles.button}>{button}</button>
   )
 }
 

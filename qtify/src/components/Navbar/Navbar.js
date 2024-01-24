@@ -10,7 +10,7 @@ function Navbar() {
       <nav className={styles.wrapper}>
         <Logo/>
         <Search/>
-        <Button/>
+        <Button button="Give Feedback"/>
       </nav>
     </div>
   ) 

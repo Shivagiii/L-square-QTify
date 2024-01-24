@@ -8,7 +8,7 @@ function Search() {
     }
   return (
    <form className={styles.box} onSubmit={searchButton}>
-    <input className={styles.input} placeholder='Search a song of your choice'/>
+    <input className={styles.input} placeholder='Search a album of your choice'/>
     <button className={styles.searchIcon} >
      <SearchIcon/>
     </button>
