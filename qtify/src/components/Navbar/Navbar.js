@@ -8,9 +8,9 @@ function Navbar() {
   return (
     <div>
       <nav className={styles.wrapper}>
-        <Logo/>
+        <a href='/'><Logo/></a>
         <Search/>
-        <Button button="Give Feedback"/>
+        <Button button="Give Feedback"></Button>
       </nav>
     </div>
   ) 

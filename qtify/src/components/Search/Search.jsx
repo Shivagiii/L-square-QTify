@@ -8,8 +8,8 @@ function Search() {
     }
   return (
    <form className={styles.box} onSubmit={searchButton}>
-    <input className={styles.input} placeholder='Search a album of your choice'/>
-    <button className={styles.searchIcon} >
+    <input className={styles.input} placeholder='Search a album of your choice' required/>
+    <button className={styles.searchIcon}  type='submit'>
      <SearchIcon/>
     </button>
    </form>
