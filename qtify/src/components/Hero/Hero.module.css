@@ -1,0 +1,25 @@
+.hero{
+    background-color: var(--color-black);
+    width: 100%;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heroBox{
+    width: 799px;
+    height: 212px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.heroTitle{
+    font-family: "Poppins", sans-serif;
+font-size: 32px;
+font-weight: 600;
+line-height: 48px;
+letter-spacing: 0px;
+text-align: center;
+color: var(--color-white);
+}
