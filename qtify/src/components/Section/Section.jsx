@@ -10,9 +10,15 @@ function Section({ header }) {
     const [click,setClick] =useState(false);
   useEffect(() => {
     async function fetchData() {
+        let url = '';
+        if(header === 'Top Albums')
+        url= "https://qtify-backend-labs.crio.do/albums/top"
+    else if(header === 'New Albums')
+    url= "https://qtify-backend-labs.crio.do/albums/new"
+
       try {
         const { data } = await axios.get(
-          "https://qtify-backend-labs.crio.do/albums/top"
+          url
         );
         //console.log(data);
         setData(data);

@@ -8,6 +8,7 @@ function CardBox() {
   return (
     <div className={styles.box}>
         <Section header={'Top Albums'}/>
+        <Section header={'New Albums'}/>
         
 
     </div>
