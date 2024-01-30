@@ -3,58 +3,49 @@ import { Tooltip, Chip, Grid } from "@mui/material";
 import styles from "./Card.module.css";
 
 function Card({ data, type }) {
-  
-  // const title = "Bollywood";
-  // const img =
-  //   "https://images.pexels.com/photos/2792157/pexels-photo-2792157.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800";
-  // const follows = "100";
-
-if(type === 'album')
-  return (
-    <Grid container gap='40px'>
-      {data.map((item) => {
-        const {title,follows,image} = item;
-        return (
-          <Grid item className={styles.card}>
-            <Tooltip arrow>
-              <img className={styles.cardImg} alt="piv" src={image} />
-              <div className={styles.followInfo}>
-                <Chip
-                  label={`${follows} Follows`}
-                  className={styles.chip}
-                  size="small"
-                />
-              </div>
-              <div className={styles.title}>{title}</div>
-            </Tooltip>
-          </Grid>
-        );
-      })}
-    </Grid>
-  );
-else if(type === 'song')
-return (
-  <Grid container>
-    {data.map((item) => {
-      const {title,follows,image} = item;
-      return (
-        <div className={styles.card}>
-          <Tooltip arrow>
+  if (type === "albums") {
+    const { title, follows, image } = data;
+    return (
+      <Tooltip arrow title={`${data.songs.length} songs`}>
+        <div  className={styles.card}>
+          <div className={styles.wrapper}>
             <img className={styles.cardImg} alt="piv" src={image} />
             <div className={styles.followInfo}>
               <Chip
-                label={`${follows} likes`}
+                label={`${follows} Follows`}
                 className={styles.chip}
                 size="small"
               />
             </div>
-            <div className={styles.title}>{title}</div>
-          </Tooltip>
+          </div>
+          <div className={styles.titleBox}><div className={styles.title}>{title}</div></div>
         </div>
-      );
-    })}
-  </Grid>
-);
+      </Tooltip>
+    );
+  } else if (type === "song") {
+    const { title, follows, image } = data;
+    return (
+      <Grid container>
+        {data.map((item) => {
+          return (
+            <div className={styles.card}>
+              <Tooltip arrow>
+                <img className={styles.cardImg} alt="piv" src={image} />
+                <div className={styles.followInfo}>
+                  <Chip
+                    label={`${follows} likes`}
+                    className={styles.chip}
+                    size="small"
+                  />
+                </div>
+                <div className={styles.title}>{title}</div>
+              </Tooltip>
+            </div>
+          );
+        })}
+      </Grid>
+    );
+  }
 }
 
 export default Card;

@@ -1,44 +1,42 @@
-import React, { useEffect, useState } from "react";
-import {Grid } from "@mui/material";
+import React, {  useState } from "react";
+import { CircularProgress } from "@mui/material";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
-import axios from "axios";
+import Carousel from "../Carousel/Carousel";
 
-function Section({ header }) {
 
-    const [data , setData] = useState([]);
-    const [click,setClick] =useState(false);
-  useEffect(() => {
-    async function fetchData() {
-        let url = '';
-        if(header === 'Top Albums')
-        url= "https://qtify-backend-labs.crio.do/albums/top"
-    else if(header === 'New Albums')
-    url= "https://qtify-backend-labs.crio.do/albums/new"
-
-      try {
-        const { data } = await axios.get(
-          url
-        );
-        //console.log(data);
-        setData(data);
-      } catch (e) {
-        console.log("error");
-      }
-    }
-    fetchData();
-  });
-
+function Section({ header, data, type }) {
+ 
+  const [carousel, setCarousel] = useState(false);
+ 
+  
+console.log(data);
   return (
-    <div >
+    <div className={styles.section}>
       <div className={styles.sectionHeader}>
         <p className={styles.header}>{header}</p>
-        <button   className={styles.collapseBtn}  onClick={() => setClick(!click)}>Collapse</button>
-        
+        <button
+          className={styles.collapseBtn}
+          onClick={() => setCarousel(!carousel)}
+        >
+          {!carousel ? "Show All" : "Collapse All"}
+        </button>
       </div>
-      <div  className={click ? styles.showAll : styles.collapse}>
-      <Card data={data} type={'album'}/>
-      </div>
+      {data.length === 0 ? (
+        <CircularProgress />
+      ) : (
+        <div className={styles.cardWrapper}>
+          {carousel ? (
+            <div className={styles.showAll}>
+              {data.map((ele) => (
+                <Card data={ele} type={type} key={ele.id}/>
+              ))}
+            </div>
+          ) : (
+            <Carousel data={data} />
+          )}
+        </div>
+      )}
     </div>
   );
 }

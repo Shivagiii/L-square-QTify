@@ -1,43 +1,40 @@
+.section{
+    padding:32px;
+    background-color: var(--color-black);
+}
+
 .header{
-    font-family: Poppins;
-font-size: 20px;
-font-weight: 600;
-line-height: 30px;
-letter-spacing: 0px;
 text-align: left;
 color: var(--color-white);
+font-weight: 600;
 
 }
 .sectionHeader{
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-black);
-    padding-bottom: 10px;
+   
+    align-items: baseline;
 }
-.collapse{
-    
+.collapse{ 
      height:280px;
-    
      background-color: var(--color-black);
-     padding: 0px 31px 0px 31px;
+    
 }
 .collapseBtn{
     color: var(--color-primary) ;
-    font-family: Poppins;
-font-size: 20px;
-font-weight: 600;
-line-height: 30px;
-letter-spacing: 0px;
-text-align: right;
 background-color: var(--color-black) ;
 border: none;
-width:90px;
 cursor: pointer;
-padding: 0px;
+}
+.CardWrapper{
+    
+    margin-top: 18px
 }
 .showAll{
-    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--color-black);
-    
+    gap: 40px;
     width: 100%;
+    padding: 18px 12px 0px 12px;
 }
