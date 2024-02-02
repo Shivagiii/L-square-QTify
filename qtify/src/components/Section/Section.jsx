@@ -2,7 +2,7 @@ import React, {  useState } from "react";
 import { CircularProgress } from "@mui/material";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
-//import Carousel from "../Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 
 
 function Section({ header, data, type }) {
@@ -26,15 +26,16 @@ console.log(data);
         <CircularProgress />
       ) : (
         <div className={styles.cardWrapper}>
-          {!carousel ? (
+          {carousel ? (
             <div className={styles.showAll}>
               {data.map((ele) => (
                 <Card data={ele} type={type} key={ele.id}/>
               ))}
             </div>
           ) : (
-           // <Carousel data={data} />
-           <></>
+            <Carousel data={data} 
+            renderComponent={(data)  => <Card data={data}  type={type}/>}/>
+           
           )}
         </div>
       )}

@@ -5,10 +5,10 @@ import Link from "@mui/material/Link";
 
 function Card({ data, type }) {
   if (type === "albums") {
-    const { title, follows, image } = data;
+    const { title, follows, image,slug } = data;
     return (
       <Tooltip arrow title={`${data.songs.length} songs`}>
-        <Link to={'/'}>
+        <Link to={`/album/${slug}`}>
         <div className={styles.card}>
           <div className={styles.wrapper}>
             <img className={styles.cardImg} alt="piv" src={image} />

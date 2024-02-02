@@ -2,3 +2,6 @@
     padding: 30px;
     background-color: var(--color-black);
 }
+.wrapper{
+    position: relative;
+}
