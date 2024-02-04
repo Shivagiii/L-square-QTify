@@ -38,3 +38,14 @@ cursor: pointer;
     width: 100%;
     padding: 18px 12px 0px 12px;
 }
+
+.filterWrapper{
+    margin: 15px;
+    width:  auto;
+
+
+left: 32px;
+gap: 28px;
+
+
+}   
